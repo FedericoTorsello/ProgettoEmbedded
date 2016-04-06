@@ -1,0 +1,2 @@
+# ProgettoEmbedded
+Progetto Embedded
