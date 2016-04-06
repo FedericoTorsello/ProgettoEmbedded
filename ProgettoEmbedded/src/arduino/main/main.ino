@@ -7,7 +7,6 @@ void setup() {
     // wait serial port initialization
   }
 
-
 }
 
 void loop() {
