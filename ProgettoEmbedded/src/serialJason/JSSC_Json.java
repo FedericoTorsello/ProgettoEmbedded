@@ -1,7 +1,5 @@
 package serialJason;
 
-
-
 import com.google.gson.stream.JsonReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -22,8 +20,7 @@ public class JSSC_Json {
         
         while (true) {
             Thread.sleep(2000);// utile per riavviare la connessione con Arduino
-
-            String input = serialPort.readString();
+            String input = serialPort.readString();            
 
             try (JsonReader reader = new JsonReader(new StringReader(input))) {
                 reader.beginObject();
@@ -38,6 +35,7 @@ public class JSSC_Json {
                         System.out.println(reader.nextInt());
                     } else {
                         reader.skipValue(); //avoid some unhandle events
+                        Thread.sleep(200);// utile per riavviare la connessione con Arduino
                     }
                 }
                 
